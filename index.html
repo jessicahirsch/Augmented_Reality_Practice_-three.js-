@@ -1,6 +1,5 @@
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
     <title>My first three.js app</title>
     <style>
       body { margin: 0; }
@@ -22,10 +21,10 @@
     <div id="info">Description</div>
 
     <script src="js/three.js"></script>
-    <script src="js/script.js"></script>
     <script>
       var scene = new THREE.Scene();
       var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+      // PerspectiveCamera(fov, aspect, near, far) // significance of PerspectiveCamera values
 
       // BOXGEOMETRY -------------------------------------------------------- //
 
@@ -60,6 +59,7 @@
 
       // var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 500);
       // camera.position.set(0, 0, 100);
+      // camera.position.set(x,y,z) // significance of camera.position values -> setting y axis is most important
       // camera.lookAt(new THREE.Vector3(0, 0, 0));
 
       // var scene = new THREE.Scene();
@@ -98,6 +98,9 @@
           bevelSegments: 5
         } );
       } );
+
+      scene.add(text);
+      renderer.render(scene, camera);
 
     </script>
   </body>
